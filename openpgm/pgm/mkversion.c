@@ -72,7 +72,7 @@ main(int argc, char* argv[])
 	puts("#include <pgm/version.h>");
 	printf("const unsigned pgm_major_version = 5;\n");
 	printf("const unsigned pgm_minor_version = 2;\n");
-	printf("const unsigned pgm_micro_version = 127;\n");
+	printf("const unsigned pgm_micro_version = 122;\n");
 	printf("const char* pgm_build_date = \"%s\";\n", build_date);
 	printf("const char* pgm_build_time = \"%s\";\n", build_time);
 	printf("const char* pgm_build_system = \"%s\";\n", build_system);

@@ -223,12 +223,13 @@ set (CMAKE_MODULE_PATH "${CMAKE_BINARY_DIR}")
 
 install (TARGETS libpgm DESTINATION lib)
 install (TARGETS purinsend purinrecv daytime shortcakerecv DESTINATION bin)
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-	install (
-		FILES ${CMAKE_BINARY_DIR}/lib/libpgm${_pgm_COMPILER}-mt-gd-${OPENPGM_VERSION_MAJOR}_${OPENPGM_VERSION_MINOR}_${OPENPGM_VERSION_MICRO}.pdb
-		DESTINATION lib
-	)
-endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
+# 使用vcpkg默认参数情况下，没有pdb
+#if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+#	install (
+#		FILES ${CMAKE_BINARY_DIR}/lib/libpgm${_pgm_COMPILER}-mt-gd-${OPENPGM_VERSION_MAJOR}_${OPENPGM_VERSION_MINOR}_${OPENPGM_VERSION_MICRO}.pdb
+#		DESTINATION lib
+#	)
+#endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
 install (FILES ${headers} DESTINATION include/pgm)
 foreach (doc ${docs})
 	configure_file (${CMAKE_SOURCE_DIR}/${doc} ${CMAKE_BINARY_DIR}/${doc}.txt)
